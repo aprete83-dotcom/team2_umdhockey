@@ -76,11 +76,16 @@
           Add Game
         </button>
 
-        
+        <button type="button"
+                class="btn btn-success mb-2"
+                data-bs-toggle="modal"
+                data-bs-target="#sendMessageModal">
+          Send Message
+        </button>
       </div>
     </div>
 
-    <!-- tabs to switch between sections -->
+    <!-- tabs -->
     <ul class="nav nav-tabs mb-4" id="scheduleTabs" role="tablist">
 
       <li class="nav-item" role="presentation">
@@ -118,10 +123,10 @@
 
     </ul>
 
-    <!-- content inside tabs -->
+    <!-- tab content -->
     <div class="tab-content">
 
-      <!-- GAME SCHEDULE -->
+      <!-- GAME SCHEDULE TAB -->
       <div class="tab-pane fade show active" id="games-pane" role="tabpanel">
         <div class="row g-4">
 
@@ -150,7 +155,7 @@
         </div>
       </div>
 
-      <!-- PRACTICES -->
+      <!-- PRACTICES TAB -->
       <div class="tab-pane fade" id="practices-pane" role="tabpanel">
         <div class="row g-4">
 
@@ -179,7 +184,7 @@
         </div>
       </div>
 
-      <!-- EMAIL NOTIFICATIONS -->
+      <!-- EMAIL NOTIFICATIONS TAB -->
       <div class="tab-pane fade" id="emails-pane" role="tabpanel">
 
         <div class="card p-4 card-box mb-4">
@@ -223,14 +228,9 @@
 
           <div class="col-md-6">
             <div class="card p-4 card-box h-100">
-              <h3>Send Manual Notification</h3>
+              <h3>Manual Notifications</h3>
               <p><strong>Use case:</strong> Send a quick message to all players or selected groups.</p>
-              <button type="button"
-                      class="btn btn-primary mt-2"
-                      data-bs-toggle="modal"
-                      data-bs-target="#sendMessageModal">
-                Send Message to Team
-              </button>
+              <p class="mb-0">Use the green <strong>Send Message</strong> button at the top of the page to open the message form.</p>
             </div>
           </div>
 
@@ -258,9 +258,7 @@
 
   </main>
 
-  <!-- =========================
-       ADD PRACTICE MODAL
-       ========================= -->
+  <!-- ADD PRACTICE MODAL -->
   <div class="modal fade" id="addPracticeModal" tabindex="-1" aria-labelledby="addPracticeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
@@ -273,7 +271,6 @@
         <div class="modal-body">
           <form>
 
-            <!-- practice title and location -->
             <div class="row mb-3">
               <div class="col-md-6">
                 <label for="practiceTitle" class="form-label">Practice Title</label>
@@ -286,7 +283,6 @@
               </div>
             </div>
 
-            <!-- date, time, contact -->
             <div class="row mb-3">
               <div class="col-md-4">
                 <label for="practiceDate" class="form-label">Date</label>
@@ -304,13 +300,11 @@
               </div>
             </div>
 
-            <!-- notes -->
             <div class="mb-3">
               <label for="practiceNotes" class="form-label">Notes</label>
               <textarea class="form-control" id="practiceNotes" rows="3" placeholder="Extra notes for players"></textarea>
             </div>
 
-            <!-- checkbox -->
             <div class="form-check">
               <input class="form-check-input" type="checkbox" id="sendPracticeEmail">
               <label class="form-check-label" for="sendPracticeEmail">
@@ -330,9 +324,7 @@
     </div>
   </div>
 
-  <!-- =========================
-       ADD GAME MODAL
-       ========================= -->
+  <!-- ADD GAME MODAL -->
   <div class="modal fade" id="addGameModal" tabindex="-1" aria-labelledby="addGameModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
@@ -345,7 +337,6 @@
         <div class="modal-body">
           <form>
 
-            <!-- opponent and location -->
             <div class="row mb-3">
               <div class="col-md-6">
                 <label for="opponentName" class="form-label">Opponent</label>
@@ -358,7 +349,6 @@
               </div>
             </div>
 
-            <!-- date, time, home/away -->
             <div class="row mb-3">
               <div class="col-md-4">
                 <label for="gameDate" class="form-label">Date</label>
@@ -380,13 +370,11 @@
               </div>
             </div>
 
-            <!-- notes -->
             <div class="mb-3">
               <label for="gameNotes" class="form-label">Notes</label>
               <textarea class="form-control" id="gameNotes" rows="3" placeholder="Extra notes for players"></textarea>
             </div>
 
-            <!-- checkbox -->
             <div class="form-check">
               <input class="form-check-input" type="checkbox" id="sendGameEmail">
               <label class="form-check-label" for="sendGameEmail">
@@ -406,22 +394,19 @@
     </div>
   </div>
 
-  <!-- =========================
-       SEND MESSAGE MODAL
-       ========================= -->
+  <!-- SEND MESSAGE MODAL -->
   <div class="modal fade" id="sendMessageModal" tabindex="-1" aria-labelledby="sendMessageModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
 
         <div class="modal-header">
-          <h5 class="modal-title" id="sendMessageModalLabel">Send Message to Team</h5>
+          <h5 class="modal-title" id="sendMessageModalLabel">Send Message</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
 
         <div class="modal-body">
           <form>
 
-            <!-- subject and recipients -->
             <div class="row mb-3">
               <div class="col-md-6">
                 <label for="messageSubject" class="form-label">Subject</label>
@@ -441,7 +426,6 @@
               </div>
             </div>
 
-            <!-- message -->
             <div class="mb-3">
               <label for="messageBody" class="form-label">Message</label>
               <textarea class="form-control" id="messageBody" rows="5" placeholder="Write the message here"></textarea>
